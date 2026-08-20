@@ -1,4 +1,4 @@
-# @ravenluke/figma-scale
+# @lukewarmraven/figma-scale
 
 Converts Figma design canvas px values into responsive CSS `calc()` strings that scale with the live viewport — so your designs stay proportional at any screen size without media query breakpoints.
 
@@ -9,7 +9,7 @@ Works in any JS/TS project: Next.js, React, Vue, Vite, vanilla JS, etc.
 ## Install
 
 ```bash
-npm install @ravenluke/figma-scale
+npm install @lukewarmraven/figma-scale
 ```
 
 ---
@@ -39,7 +39,7 @@ Call `initFigmaScale` in your entry file, then use `vw` / `vh` anywhere:
 
 ```ts
 // main.ts / index.ts
-import { initFigmaScale } from '@ravenluke/figma-scale'
+import { initFigmaScale } from '@lukewarmraven/figma-scale'
 
 initFigmaScale({
   canvasW: 1728,   // your Figma canvas width
@@ -50,7 +50,7 @@ initFigmaScale({
 
 ```ts
 // any component / module
-import { vw, vh } from '@ravenluke/figma-scale'
+import { vw, vh } from '@lukewarmraven/figma-scale'
 
 element.style.width  = vw(200)   // "calc(200px * var(--figma-scale-w) * 0.6)"
 element.style.height = vh(100)   // "calc(100px * var(--figma-scale-h) * 0.6)"
@@ -63,14 +63,14 @@ element.style.fontSize = vw(24)
 
 ```tsx
 // src/main.tsx
-import { initFigmaScale } from '@ravenluke/figma-scale'
+import { initFigmaScale } from '@lukewarmraven/figma-scale'
 
 initFigmaScale({ canvasW: 1440, canvasH: 900, scale: 0.55 })
 ```
 
 ```tsx
 // src/components/Hero.tsx
-import { vw, vh } from '@ravenluke/figma-scale'
+import { vw, vh } from '@lukewarmraven/figma-scale'
 
 export function Hero() {
   return (
@@ -89,7 +89,7 @@ Next.js renders on the server, so the init script must run as an inline `<script
 
 ```tsx
 // app/layout.tsx
-import { getScriptString } from '@ravenluke/figma-scale'
+import { getScriptString } from '@lukewarmraven/figma-scale'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -109,7 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ```tsx
 // anywhere in your components (client or server)
-import { vw, vh } from '@ravenluke/figma-scale'
+import { vw, vh } from '@lukewarmraven/figma-scale'
 
 export function Card() {
   return (
@@ -129,7 +129,7 @@ export function Card() {
 ```tsx
 // pages/_document.tsx
 import { Html, Head, Main, NextScript } from 'next/document'
-import { getScriptString } from '@ravenluke/figma-scale'
+import { getScriptString } from '@lukewarmraven/figma-scale'
 
 export default function Document() {
   return (
